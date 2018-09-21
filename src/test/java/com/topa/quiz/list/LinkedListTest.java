@@ -123,6 +123,18 @@ public class LinkedListTest {
     }
 
     @Test
+    public void testAddElementAfterRemove() {
+        IntLinkedList linkedList = new IntLinkedList();
+        linkedList.add(1);
+        linkedList.add(2);
+        linkedList.add(3);
+        linkedList.removeLast();
+        linkedList.add(4);
+        assertEquals("Invalid number or elements", 3, linkedList.size());
+        checkListElements(linkedList, 1, 2, 4);
+    }
+
+    @Test
     public void testRemoveElementsByValue() {
         IntLinkedList linkedList = new IntLinkedList();
         linkedList.add(3);
